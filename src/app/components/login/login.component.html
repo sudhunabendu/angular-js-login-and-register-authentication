@@ -1,0 +1,27 @@
+
+<div style="color:white" class="container border py-4">
+    <h3 class="text-center">Restrotap</h3>  
+  <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+
+     <div class="alert alert-danger" [hidden]="!error">
+       {{error}}
+      </div>
+  
+    <div class="col-md-12">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" name="email" class="form-control" [(ngModel)]="form.email" placeholder="Enter Email Address" Required>
+      
+    </div>
+    <div class="col-md-12">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" name="password" class="form-control" [(ngModel)]="form.password" placeholder="Enter Password" Required>
+    </div>
+    &nbsp;
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-outline-light" [disabled]="!loginForm.valid">Sign In</button>
+  </form>
+  <a  class="btn btn-outline-light demo" routerLink="/register" >Sign Up</a>
+</div>
